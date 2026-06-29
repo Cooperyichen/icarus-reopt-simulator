@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: sim_hts
+message: A HTS simulator based optimization
+type: software
+authors:
+  - given-names: Zineb
+    family-names: Garroussi
+    email: zineb.garroussi@polymtl.ca
+    affiliation: Polytechnique Montréal
+abstract: An optimization-based simulator for HIGH THROUGHPUT SATELLITE
+keywords:
+  - Toroidal architecture
+  - Multi-commodity flow optimization
+  - Queuing simulation
+license: Proprietary
+version: 0.5.3
+date-released: '2024-05-22'
+

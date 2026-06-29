@@ -1,0 +1,28 @@
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+__MACOSX/
+**/__MACOSX/
+*.zip
+
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+.pytest_cache/
+
+# Local/temporary experiment artifacts
+iterations/
+
+# Generated simulation outputs
+src/results/
+validation output/
+tests/test_results/
+
+# Generated documentation builds
+docs/tech_report/_build/
+
+# Local editor and OS metadata
+.vscode/
+.idea/

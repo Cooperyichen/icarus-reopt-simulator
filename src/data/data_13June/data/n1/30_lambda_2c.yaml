@@ -1,0 +1,240 @@
+
+# YAML DATA FILE 
+# @author: zineb.garroussi@polymtl.ca
+
+
+# =============================================================================
+# # note: packet size in bytes
+# # note: interlink capacity in bits/s
+# #note: priority level : lower value means higher priority
+# #note: interlink capacity in real obp processor is 10 gbit/s
+# # File results/averages_results.txt contains results of simulation metrics
+# # folder results/${scenario_name}/ contains the demand_matrix.csv
+# # in the optimization in constaints flow <= interlink capacity we adjust the unit packets/s * packet size in bytes * 8 <= interlink capacity in bits/s
+# # where we have one obp in the considered topology, do not use objectif function that consider interlinks because we haven't any interlinks, choose objective 4
+# # arrival in packets/s
+# # this project consider fixed packet size
+# # the file that contains the results of the optimization is in folder results/${scenario_name}/${run_i}/mcfp_results_flows_{number_commodities}.csv
+# # please reduce the interlink capacity if you want to see the impact of split, also set in yaml split-commodities as on or off
+# # some objective are quadratic, adapt the solver, in our project we consider linear formulations (obje 7  (remaining capacity and object 8 we add the priority term)
+# # if packet have the same size, WFQ is like priority queue.
+# 
+# =============================================================================
+
+scenario_name: 30_lambda_2c ## # Name of the scenario,  it will appear in plots. 
+
+random_seed:
+
+  seed_value: 12 #  Seed value for random number generation, ensuring reproducibility. (Number)
+  
+
+system:
+
+  width: 1 # Width of the system grid. (Number)
+  
+  height: 1 # Height of the system grid. (Number)
+  
+  downlink_number: 20 # Number of downlink connected to each obp module in our topology (Number)
+  
+  uplink_number: 20 # Number of uplink connected to each obp module in our topology (Number)
+  
+  interlink_capacity: 10000000   # Bandwidth capacity of the interlinks in bits per second (bp/time_unit)
+  
+  demand_matrix_generation: "random"  # "random" or "fixed"
+  
+  time_unit: "ms"  # Options: "s" for seconds, "ms" for milliseconds. Determines the unit for all time-related configurations in this file.
+
+
+
+optimization:
+
+  num_commodities:  7 # Number of commodities to be optimized. (Number)
+  
+  optimization_model: multicommodity   # Type of optimization model used.
+  
+  max_hops: 7  # Maximum allowed number of hops in a path.
+  
+  objective_func: 'minimize_max_flow' # Identifier for the objective function used in optimization. 'minimize_max_flow' or 'remaining_capacity_maximization' or 'capacity_priority_tradeoff' or  'normalized_weighted_capacity_optimization'
+  
+  split_commodities: "off" # Options: "on" or "off" , Whether to split the flow of each commodity.
+
+
+
+random_demand:  # if   demand_matrix_generation: "random"
+
+  minimum_flow_value: 30
+  
+  maximum_flow_value: 30
+   
+  max_priority: 3 #  Max priority
+   
+   
+fixed_demand: 
+
+  arrival_rate: [3,3,3,3] #[10,10,10,10] #[12,12,12,12]  #  [15,15,15,15]   #[0.1,0.1,0.1,0.1] #[15,15,15] # [30,30,30]  #[10,10,10] # [30,30,30] # S[10,10,10] # [16, 16, 16]  #[30,30,30] #[16, 16, 16] #[23,23,23] # [20,20,20]  # [10,10,10] # [16, 16, 16] # [10,10,10] #,10] #, 10] # [14,14,14] #[6,6,6] # [11,11,11] # [10, 10, 10]  # [7, 7, 7]  #[16, 16, 16]  #[15, 15, 15] [30, 30, 30] #[13,13,13] #[7, 7, 7] #[10, 10, 10] #[13,13,13] #[20, 20, 20] #[20, 20, 20] #, 20] # 24  # light traffic (Packets/s)  ,  for  heavy traffic 64
+  
+  
+  priority:  [1,2,3,4] #,3] #,4]    #   Priority level for each commodity, where lower value indicate higher priority.
+  
+
+
+  source: ['OBPModule(0, 0)_uplink_0', 'OBPModule(1, 0)_uplink_0', 'OBPModule(0, 1)_uplink_0',  'OBPModule(1, 1)_uplink_0']  #  Source nodes (uplink) for each commodity.
+  
+  destination:  ['OBPModule(1, 1)_downlink_0', 'OBPModule(0, 1)_downlink_0', 'OBPModule(1, 0)_downlink_0', 'OBPModule(0, 0)_downlink_0'] # Destination nodes (Dowlink) for each commodity.
+
+
+
+
+simulation:
+
+  num_runs: 10 # Number of runs for the simulation for confidence interval.
+  
+  simulation_time: 1000 #  Total time for each simulation run in ms
+  
+  generation_finish_time: 300 # Time duration when the generation of packets/commodities should stop. (should be less than simulation time) set to "inf" for infinite generation
+  
+
+  buffer_size:  15000 #'infinite' # 'None'  #10000 #'None' #  Buffer size at each OBP node ('None' for infinite buffer). Unit: depends on limit_bytes parameter, (Number of 'None' if buffer infinite)
+  
+  obp_capacity: 200 #  # Processing rate at the OBP module, Unit: Packet/s
+  
+  fetchingAlgorithm: "fifo"  #"priority"  # "fifo" or "wfq" or "priority"  or "preemptive" #  # Packet fetching algorithm ("fifo" or "wfq" or "priority" ). "NonPreemptiveOBPport"  # PreemptiveOBPport 
+
+  
+  brancher_type: "random"  # Options: "random", "round_robin", "weighted_round_robin"
+  
+    
+  limit_bytes: True #  If True, queue limits  'buffer_size parameter' are in bytes. Otherwise, it's packet-based.
+  
+  
+  interarrival_time_generation: "exponential" # "weibull" or "uniform"  or "exponential" or "fixed",  Type of interarrival time distribution.
+  
+  interarrival_time_value_if_generation_fixed: 0.015625  # Fixed interarrival time value if interarrival_time_generation: "fixed"
+  
+  
+  
+  packet_distribution_generation: "fixed"  # Options: "exponential" or "fixed"  # Type of packet size distribution.
+  
+  avg_packet_size: 1500.00  # Average size of packets. bytes
+  
+  
+  
+  max_failed_nodes: 0 # Maximum number of nodes that can fail.
+  
+  
+  probability_failure: 0 # 0.0007  # Probability of OBP node failure. between 0 and 1 
+  
+  #failure_timing: "middle"  # Options: "start", "middle", "end", or a specific time (e.g., "at_time": 500)
+  
+  #failure_timing: ["start", "middle", {"at_time": 500}]   # Options: "start", "middle", "end", or a specific time (e.g., "at_time": 500)
+
+
+  path_mode: "cold" # "warm"  
+  
+  failure_strategy: "fail-drop" # Strategy to handle failures: "fail-drop".
+
+
+  backup_is_considered: 'off'  # Whether backup nodes are considered in the simulation.
+  
+  re_routing_is_considered: 'off'   # Whether re-routing is considered in case of failures.
+  
+  backup:   # Backup OBP nodes (Here for instance we have two).
+  - (0, 3)
+  - (3, 1)  
+  
+  weibull_packet_generation:
+  
+      shape_weibull: 2.00   # Shape parameter for Weibull distribution of packet generation.
+      
+  uniform_packet_generation:
+  
+      lower_bound: 1000.0  # Lower bound for uniform distribution of packet generation.
+      
+      upper_bound: 2000.0  # Upper bound for uniform distribution of packet generation.
+      
+
+  
+obp_port:
+  infinite_capacity: False  # or False, Whether OBP ports have infinite capacity.
+  
+interlink:  
+  infinite_capacity: False # or False, Whether INTERLINK have infinite capacity.
+
+
+############ objective_func ###########################################
+
+# some objective are not linear, please in this case changer the type of solver, we use objective 7 and 8 in our research for now
+  
+# Objective 1: Minimize Sum of Squared Flows 
+# This objective aims to minimize the total squared flow across all paths for each commodity,
+# seeking to balance the network load and reduce the likelihood of congestion.
+
+# Objective 2: Maximize Sum of Flows on Interlinks
+# This objective focuses on maximizing the total flow through the network's interlinks,
+# effectively utilizing the network's capacity to its fullest.
+
+# Objective 3: Minimize Total Flow
+# The goal here is to minimize the sum of the flows for all commodities across all paths,
+# reducing the overall network traffic and potentially conserving network resources.
+
+# Objective 4: Minimize Maximum Flow
+# This objective seeks to minimize the highest flow value across all commodities and paths,
+# ensuring that no single path is disproportionately burdened.
+
+# Objective 5: Maximize Minimum Flow
+# The aim is to maximize the smallest flow value across all commodities and paths,
+# promoting a more equitable distribution of network resources.
+
+# Objective 6: Maximize Sum of Remaining Capacities on Interlinks
+# This objective maximizes the total remaining capacities of all interlinks after accounting for all flows,
+# optimizing the unused capacity of the network.
+
+# Objective 7: Maximize Minimum Remaining Capacity
+# The focus is on maximizing the smallest remaining capacity across all interlinks,
+# ensuring that even the least-utilized link has optimal capacity available.
+
+# Objective 8: Combined Objective with Weighted Priority Term
+# This combines the goal of maximizing the minimum remaining capacity with a priority term for certain flows,
+# controlled by a trade-off parameter \(\lambda\), balancing capacity maximization with priority considerations.
+
+# Objective 9: Normalized Combined Max-Min Capacity and Priority
+# This objective maximizes the minimum remaining capacity while considering commodity priority,
+# normalizing the terms to account for capacity and total flow, ensuring a balanced optimization.
+
+# Objective 10: Minimize Largest Flow
+# The goal here is to minimize the largest flow value across all commodities and paths,
+# preventing any single path or commodity from overwhelming the network.
+  
+  
+  
+############  fetchingAlgorithm: "fifo" # Packet fetching algorithm (FIFO, WFQ, or priority-based).
+
+
+# The `fetchingAlgorithm` parameter determines how packets are fetched from the buffer.
+
+# It can have one of the following values:
+
+# - "fifo" (First-In-First-Out): Packets are fetched in the order they arrived, with the packet that arrived first being served first. This algorithm is fair and follows the principle of serving packets in the order they were enqueued.
+# - "wfq" (Weighted Fair Queueing): Packets are assigned weights, and they are fetched and served based on their weights. Higher-weighted packets are given priority. WFQ is useful for providing differentiated service levels to different traffic classes.
+# - "priority-based": Packets are fetched and served based on their priority levels. Lower numeric priority values indicate higher priority. This algorithm allows for strict prioritization of packets based on their importance or class of service.
+
+# Choose the appropriate fetching algorithm based on your network's requirements and traffic management policies.
+  
+
+
+############### brancher_type: "random" # Type of branching strategy in the network.
+
+
+# The `brancher_type` parameter defines the strategy used to select a path from the optimized paths for packets of the same commodity.
+# - When set to "random," the branching strategy randomly selects a path from the available optimized paths for packets of the same commodity. This strategy introduces an element of randomness in path selection, which can help distribute traffic and avoid congestion on specific paths.
+# - Depending on network requirements, other values such as "round_robin" or "weighted_round_robin" may be used to implement path selection strategies that distribute traffic more evenly or prioritize certain paths based on weights or other factors.
+
+# These parameters collectively control how packets arriving from different commodities are fetched and served, and how path selection is managed within a commodity, providing flexibility to meet various network traffic management needs.
+
+
+
+
+
+
+
+

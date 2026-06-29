@@ -30,12 +30,3 @@ The project is organized into several directories, each containing specific modu
 - Necessary Python packages as listed in `requirements.txt`
 
 
-
-## Documentation 
-
-The docs Folder contains PDF, LaTeX, and HTML documentation.
-
-
-## UML
-
-The UML folder contains class diagrams.
