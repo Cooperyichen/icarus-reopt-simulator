@@ -1,41 +1,88 @@
-# Project sim_net_hts Load Balancing
+# ICARUS Re-optimization Simulator
 
-## Overview
+This repository contains a cleaned research prototype for network simulation and
+event-triggered re-optimization experiments. It builds on an ICARUS-style
+packet-level simulator and adds research code for multi-commodity flow
+re-optimization.
 
-This project implements load balancing for the ICARUS project. It includes various components for network simulation, optimization, and data visualization.
+## What This Project Does
 
-## Project Structure
+The codebase has two main parts:
 
-The project is organized into several directories, each containing specific modules and scripts:
+- **Network simulator core**: builds a graph-based communication network and
+  simulates packet generation, switching, queueing, link transmission, delay,
+  and packet loss under configurable traffic and topology settings.
+- **Re-optimization research layer**: uses the simulator output together with a
+  multi-commodity flow optimizer. The research code explores how dual variables
+  and congestion signals can guide path updates or re-optimization decisions.
 
-- **data**: Contains datasets and related files.
-- **demux**: Demultiplexing-related scripts and modules.
-- **flow**: Flow-related scripts and modules.
-- **main**: Main scripts to run the project.
-- **modem**: Modem-related scripts and modules.
-- **optimizer**: Optimization-related scripts and modules.
-- **packet**: Packet-related scripts and modules.
-- **plots**: Plotting scripts and saved plots.
-- **port**: Port-related scripts and modules.
-- **results**: Resulting data from simulations and analyses.
-- **scheduler**: Scheduling algorithms and related scripts.
-- **simulator**: Simulation environment and related scripts.
-- **topo**: Topology-related scripts and modules.
-- **utils**: Utility scripts and helper functions.
+The current refactoring effort is focused on turning earlier one-off experiment
+scripts into reusable simulator and optimizer workflows.
 
+## Current Multi-step Simulation Status
 
-## Requirements
+The simulator now has initial support for running simulations across multiple
+discrete time steps.
 
-- Python 3.10.9 or later
-- Necessary Python packages as listed in `requirements.txt`
+Currently working:
 
+- Saving packets that remain in port queues at the end of a step.
+- Saving packets that remain in wires at the end of a step.
+- Restoring saved packets into the next step's queue or wire state.
+- Looking up switch ports consistently across `SimplePacketSwitch` and
+  `FairPacketSwitch`.
+- Running state restoration unit tests for queue, wire, timestamp, and recovered
+  packet metadata behavior.
 
+Still in progress:
 
-## Documentation 
+- Fully stateful multi-step simulation where restored packets continue moving
+  through the active SimPy processes in the next step.
+- Clean separation between stateless multi-step runs and stateful continuous
+  runs.
+- Cross-step Packet Loss Indicator accounting that cleanly separates temporary
+  time-limit packets from final packet loss.
 
-The docs Folder contains PDF, LaTeX, and HTML documentation.
+For now, stateless multi-step simulation is the safer first target: each time
+step can run independently, and packets left unfinished at the end of a step can
+be counted as that step's time-limit loss without being carried forward.
 
+## Repository Layout
 
-## UML
+- `src/simulator/`: main simulator orchestration logic.
+- `src/topo/`: topology generation and topology utilities.
+- `src/packet/`: packet model, generators, and sinks.
+- `src/port/`: ports, wires, and transmission components.
+- `src/modem/`: switch implementations.
+- `src/flow/`: flow-level data structures.
+- `src/optimizer/`: multi-commodity flow optimizer and re-optimization logic.
+- `src/main/`: experiment entry points and legacy research scripts.
+- `tests/`: unit and integration tests for simulator, optimizer, and multi-step
+  behavior.
+- `docs/`: technical notes and project documentation.
 
-The UML folder contains class diagrams.
+## Validation Status
+
+The focused state restoration tests currently pass:
+
+```bash
+python3 -m unittest tests.test_state_restoration -v
+```
+
+Known remaining issues in the broader test suite:
+
+- Some tests expect generated experiment outputs under `src/results/`, which are
+  intentionally not included in the public repository.
+- `unittest discover` currently attempts to import a helper module as a test
+  module.
+- Stateful multi-step recovery still needs a cleaner step lifecycle so restored
+  packets are consumed by the next step's active simulation processes.
+
+## Branches
+
+- `main`: public repository base.
+- `paper-prototype`: cleaned research simulator source and active refactoring
+  work.
+
+The draft pull request from `paper-prototype` into `main` is the current review
+path for publishing the cleaned simulator code.
