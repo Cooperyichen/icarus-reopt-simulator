@@ -81,6 +81,36 @@ class TestStateRestoration(unittest.TestCase):
         restored_packets = list(port.store.items)
         self.assertAlmostEqual(restored_packets[0].timestamp, 0.0 + time_offset, places=5)
         self.assertAlmostEqual(restored_packets[1].timestamp, 0.1 + time_offset, places=5)
+
+    def test_find_switch_port_supports_element_id_and_index(self):
+        """Test that switch port lookup handles saved element IDs and legacy indexes."""
+        config = create_test_config()
+        result_dir = os.path.join(project_path, 'tests', 'test_results')
+        os.makedirs(result_dir, exist_ok=True)
+        
+        from topo.toroidal_topo import ToroidalTopo
+        regen_obp = ToroidalTopo(scenario_config=config, width=4, height=4)
+        
+        from simulator.simulator import Simulator
+        simulator = Simulator(regen_obp, config, result_dir, 1, 'fifo', None, None)
+        
+        switch = SimplePacketSwitch(
+            env=simulator.env,
+            nports=2,
+            port_rate=10000000,
+            obp_rate=1000,
+            buffer_size=15000,
+            element_id="TestSwitch",
+            x=0,
+            y=0,
+            limit_bytes=True,
+            debug=False
+        )
+        
+        first_port = switch.ports[0]
+        self.assertIs(simulator.find_switch_port(switch, first_port.element_id), first_port)
+        self.assertIs(simulator.find_switch_port(switch, 0), first_port)
+        self.assertIsNone(simulator.find_switch_port(switch, "missing-port"))
     
     def test_restore_packets_in_wires(self):
         """Test that packets in wires are correctly restored."""
@@ -343,4 +373,3 @@ class TestStateRestoration(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

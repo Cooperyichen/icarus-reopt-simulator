@@ -1302,6 +1302,26 @@ class Simulator:
 # Multi-step Simulation: State Saving and Restoration Methods
 ####################################################################################################
 
+    def iter_switch_ports(self, switch):
+        """Return the output ports used by supported switch implementations."""
+        if isinstance(switch, FairPacketSwitch):
+            return switch.egress_ports
+        if isinstance(switch, SimplePacketSwitch):
+            return switch.ports
+        return []
+
+    def find_switch_port(self, switch, port_id):
+        """Find a switch port by saved element ID, with index lookup for legacy state."""
+        ports = self.iter_switch_ports(switch)
+        for port in ports:
+            if getattr(port, 'element_id', None) == port_id:
+                return port
+
+        if isinstance(port_id, int) and 0 <= port_id < len(ports):
+            return ports[port_id]
+
+        return None
+
     def save_packets_in_queues(self):
         """
         Save all packets currently in Port queues.
@@ -1313,15 +1333,7 @@ class Simulator:
         packets_in_queues = {}
         
         for (x, y), switch in self.switches.items():
-            # Determine the correct attribute to use based on switch type
-            if isinstance(switch, FairPacketSwitch):
-                ports = switch.egress_ports
-            elif isinstance(switch, SimplePacketSwitch):
-                ports = switch.ports
-            else:
-                continue
-            
-            for port in ports:
+            for port in self.iter_switch_ports(switch):
                 if isinstance(port, Port):
                     # Get all packets in the queue
                     queue_packets = list(port.store.items)
@@ -1348,14 +1360,7 @@ class Simulator:
         
         # Method: Find wires by traversing switches and their ports
         for (x, y), switch in self.switches.items():
-            if isinstance(switch, FairPacketSwitch):
-                ports = switch.egress_ports
-            elif isinstance(switch, SimplePacketSwitch):
-                ports = switch.ports
-            else:
-                continue
-            
-            for port in ports:
+            for port in self.iter_switch_ports(switch):
                 if isinstance(port, Port) and hasattr(port, 'out'):
                     # Check if port.out is a Wire
                     if isinstance(port.out, Wire):
@@ -1394,14 +1399,7 @@ class Simulator:
         port_statistics = {}
         
         for (x, y), switch in self.switches.items():
-            if isinstance(switch, FairPacketSwitch):
-                ports = switch.egress_ports
-            elif isinstance(switch, SimplePacketSwitch):
-                ports = switch.ports
-            else:
-                continue
-            
-            for port in ports:
+            for port in self.iter_switch_ports(switch):
                 if isinstance(port, Port):
                     key = ((x, y), port.element_id)
                     port_statistics[key] = {
@@ -1494,19 +1492,9 @@ class Simulator:
             if not switch:
                 continue
             
-            # Find the corresponding port
-            if isinstance(switch, FairPacketSwitch):
-                ports = switch.egress_ports
-            elif isinstance(switch, SimplePacketSwitch):
-                ports = switch.ports
-            else:
+            target_port = self.find_switch_port(switch, port_id)
+            if target_port is None:
                 continue
-            
-            target_port = None
-            for port in ports:
-                if port.element_id == port_id:
-                    target_port = port
-                    break
             
             if target_port:
                 # Restore packets to the queue
@@ -1552,14 +1540,7 @@ class Simulator:
             # Find the corresponding wire by traversing switches and ports
             wire = None
             for (x, y), switch in self.switches.items():
-                if isinstance(switch, FairPacketSwitch):
-                    ports = switch.egress_ports
-                elif isinstance(switch, SimplePacketSwitch):
-                    ports = switch.ports
-                else:
-                    continue
-                
-                for port in ports:
+                for port in self.iter_switch_ports(switch):
                     if isinstance(port, Port) and isinstance(port.out, Wire):
                         if (port.out.src_coords == src_coords and 
                             port.out.dst_coords == dst_coords):
@@ -1712,14 +1693,7 @@ class Simulator:
         # Calculate buffer overflow drops from ports
         step_buffer_drops = 0
         for (x, y), switch in self.switches.items():
-            if isinstance(switch, FairPacketSwitch):
-                ports = switch.egress_ports
-            elif isinstance(switch, SimplePacketSwitch):
-                ports = switch.ports
-            else:
-                continue
-            
-            for port in ports:
+            for port in self.iter_switch_ports(switch):
                 if isinstance(port, Port):
                     step_buffer_drops += port.packets_dropped
         
@@ -2059,16 +2033,14 @@ class Simulator:
                             # Check if this port is connected
                             if switch_coords in self.switches:
                                 switch = self.switches[switch_coords]
-                                if isinstance(switch, SimplePacketSwitch):
-                                    if port_id < len(switch.ports):
-                                        port = switch.ports[port_id]
-                                        if hasattr(port, 'out'):
-                                            if port.out is None:
-                                                print(f"        WARNING: Port {port_id} has no output connection!")
-                                            elif isinstance(port.out, Wire):
-                                                print(f"        Port {port_id} -> Wire -> {port.out.dst_coords}")
-                                            else:
-                                                print(f"        Port {port_id} -> {type(port.out).__name__}")
+                                port = self.find_switch_port(switch, port_id)
+                                if port is not None and hasattr(port, 'out'):
+                                    if port.out is None:
+                                        print(f"        WARNING: Port {port_id} has no output connection!")
+                                    elif isinstance(port.out, Wire):
+                                        print(f"        Port {port_id} -> Wire -> {port.out.dst_coords}")
+                                    else:
+                                        print(f"        Port {port_id} -> {type(port.out).__name__}")
                 print(f"  Still in Wires: {len(still_in_wires)}")
                 if len(still_in_wires) > 0:
                     print(f"    Wire Packet IDs: {still_in_wires[:10]}..." if len(still_in_wires) > 10 else f"    Wire Packet IDs: {still_in_wires}")
