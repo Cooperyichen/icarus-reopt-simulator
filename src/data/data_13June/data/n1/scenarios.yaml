@@ -1,0 +1,95 @@
+
+# YAML DATA FILE  for name of scenario files
+# @author: zineb.garroussi@polymtl.ca
+
+
+scenarios:
+
+
+
+#########################################################################################################3
+
+
+  # - 4_lambda_our_model.yaml  
+  # - 6_lambda_our_model.yaml  
+  # - 8_lambda_our_model.yaml  
+  # - 10_lambda_our_model.yaml  
+  # - 30_lambda_our_model.yaml
+  # - 40_lambda_our_model.yaml
+  # - 45_lambda_our_model.yaml
+  # - 50_lambda_our_model.yaml
+  # - 55_lambda_our_model.yaml
+  # - 60_lambda_our_model.yaml
+  # - 65_lambda_our_model.yaml
+  # - 70_lambda_our_model.yaml
+  # - 75_lambda_our_model.yaml
+  - 80_lambda_our_model.yaml
+
+
+  
+  
+  
+  
+  
+  # - 10_lambda_our_model_interlink_1mb.yaml  
+  # - 30_lambda_our_model_interlink_1mb.yaml
+  # - 40_lambda_our_model_interlink_1mb.yaml
+  
+  # - 10_lambda_our_model_interlink_10mb.yaml  
+  # - 30_lambda_our_model_interlink_10mb.yaml
+  # - 40_lambda_our_model_interlink_10mb.yaml  
+  
+    
+  
+
+  
+  
+  # - 10_lambda_2c.yaml  
+  # - 30_lambda_2c.yaml
+  # - 40_lambda_2c.yaml
+  # - 45_lambda_2c.yaml
+  # - 50_lambda_2c.yaml
+  # - 55_lambda_2c.yaml
+  # - 60_lambda_2c.yaml
+  # - 65_lambda_2c.yaml
+  # - 70_lambda_2c.yaml
+  # - 75_lambda_2c.yaml
+  # - 80_lambda_2c.yaml
+  
+  
+  # - 10_lambda_4c.yaml  
+  # - 30_lambda_4c.yaml
+  # - 40_lambda_4c.yaml
+  # - 45_lambda_4c.yaml
+  # - 50_lambda_4c.yaml
+  # - 55_lambda_4c.yaml
+  # - 60_lambda_4c.yaml
+  # - 65_lambda_4c.yaml
+  # - 70_lambda_4c.yaml
+  # - 75_lambda_4c.yaml  
+  # - 80_lambda_4c.yaml
+
+  
+  
+
+  # - 10_lambda_8c.yaml  
+  # - 30_lambda_8c.yaml
+  # - 40_lambda_8c.yaml
+  # - 45_lambda_8c.yaml
+  # - 50_lambda_8c.yaml
+  # - 55_lambda_8c.yaml
+  # - 60_lambda_8c.yaml
+  # - 65_lambda_8c.yaml
+  # - 70_lambda_8c.yaml
+  # - 75_lambda_8c.yaml  
+  # - 80_lambda_8c.yaml
+
+  
+
+
+#########################################################################################################3
+
+  
+  # Add more scenario files as needed
+
+

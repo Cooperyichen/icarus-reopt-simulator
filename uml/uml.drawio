@@ -1,0 +1,216 @@
+<mxfile host="app.diagrams.net" modified="2024-06-14T17:33:38.309Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" version="24.5.4" etag="NKjn4WQidAiZv9UywOGE" type="device">
+  <diagram id="tMkIneF2dN8bp1znQzPR" name="Page-1">
+    <mxGraphModel dx="3946" dy="2578" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-45" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.54;entryY=0.998;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="node23">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="2140" y="1100" as="sourcePoint" />
+            <mxPoint x="2300" y="1100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-17" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="node18">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1900" y="-24.5" as="sourcePoint" />
+            <mxPoint x="2060" y="-24.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BaseResource&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="-262" y="111" width="186" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="node10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Get&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="41" y="-351" width="79" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="node14" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Put&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="462" y="-334" width="77" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="node17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;demux.fib_demux.FIBDemux&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; outs: &lt;br/&gt; default: &lt;br/&gt; packets_received: &lt;br/&gt; ends: &lt;br/&gt; fib: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, fib=None, outs=None, ends=None, default=None): &lt;br/&gt; put(self, packet): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="-250" y="1180" width="553" height="261" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;flow.flow.Flow&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; fid: &lt;br/&gt; src: &lt;br/&gt; dst: &lt;br/&gt; path: &lt;br/&gt; flow_value: &lt;br/&gt; size: &lt;br/&gt; start_time: &lt;br/&gt; finish_time: &lt;br/&gt; arrival_dist: &lt;br/&gt; size_dist: &lt;br/&gt; pkt_gen: &lt;br/&gt; pkt_sink: &lt;br/&gt; last_arrival: &lt;br/&gt; priority: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __repr__(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="1650" y="-390" width="190" height="501" as="geometry" />
+        </mxCell>
+        <mxCell id="node22" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;modem.switch.FairPacketSwitch&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; obp_rate: &lt;br/&gt; debug: &lt;br/&gt; egress_ports: &lt;br/&gt; failed: &lt;br/&gt; env: &lt;br/&gt; ports: &lt;br/&gt; demux: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self,                  env,                  nports: int,                  port_rate: float,                  obp_rate:float,                  buffer_size: int,                  weights,                  server: str,                  flow_classes: Callable = lambda p: p.flow_id,                  element_id: str = &amp;quot;&amp;quot;,                  x : int = 0,                  y : int = 0,                  debug: bool = False): &lt;br/&gt; put(self, packet): &lt;br/&gt; _put(self, packet): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="2057" y="-199" width="376" height="351" as="geometry" />
+        </mxCell>
+        <mxCell id="node15" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;modem.switch.SimplePacketSwitch&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; obp_rate: &lt;br/&gt; debug: &lt;br/&gt; x: &lt;br/&gt; y: &lt;br/&gt; element_id: &lt;br/&gt; failed: &lt;br/&gt; env: &lt;br/&gt; ports: &lt;br/&gt; demux: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self,                  env,                  nports: int,                  port_rate: float,                  obp_rate:float,                  buffer_size: int,                  element_id: str = &amp;quot;&amp;quot;,                  x : int = 0,                  y : int = 0,                  debug: bool = False): &lt;br/&gt; fail(self): &lt;br/&gt; put(self, packet): &lt;br/&gt; _put(self, packet): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1970" y="-775" width="403" height="441" as="geometry" />
+        </mxCell>
+        <mxCell id="node21" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;packet.dist_generator.PacketGenerator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; adist: &lt;br/&gt; debug: &lt;br/&gt; rec_flow: &lt;br/&gt; env: &lt;br/&gt; sent_size: &lt;br/&gt; time_rec: &lt;br/&gt; out: &lt;br/&gt; initial_delay: &lt;br/&gt; size_rec: &lt;br/&gt; packets_sent: &lt;br/&gt; size: &lt;br/&gt; flow_id: &lt;br/&gt; action: &lt;br/&gt; finish: &lt;br/&gt; sdist: &lt;br/&gt; id: &lt;br/&gt; original_flow_id: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, env, id, adist, sdist, initial_delay=0, finish=None, size=None, flow_id=0, original_flow_id=0, rec_flow=False, debug=False): &lt;br/&gt; run(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1630" y="300" width="470" height="621" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;packet.packet.Packet&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; size: &lt;br/&gt; dst: &lt;br/&gt; src: &lt;br/&gt; payload: &lt;br/&gt; flow_id: &lt;br/&gt; id: &lt;br/&gt; original_flow_id: &lt;br/&gt; priority: &lt;br/&gt; prio: &lt;br/&gt; timestamp: &lt;br/&gt; status: &lt;br/&gt; perhop_time: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self,                   timestamp,  # the time when the packet is generated                  size,    # the size of the packet in bytes                  id,   # an identifier for the packet                  flow_id,  # flow identifier                   original_flow_id,  # original flow identifier                  src = &amp;quot;source&amp;quot;, # source identifier                  dst = &amp;quot;destination&amp;quot;,   # destination identifier                  priority =0,                   payload=None,  # payload data (default None)                  status=&amp;quot;delivered&amp;quot;): &lt;br/&gt; __repr__(self): &lt;br/&gt; drop(self): &lt;br/&gt; block(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="2310" y="212" width="411" height="531" as="geometry" />
+        </mxCell>
+        <mxCell id="node19" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;packet.sink.PacketSink&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; debug: &lt;br/&gt; waits: &lt;br/&gt; arrivals: &lt;br/&gt; absolute_arrivals: &lt;br/&gt; rec_flow_ids: &lt;br/&gt; rec_arrivals: &lt;br/&gt; bytes_received: &lt;br/&gt; store: &lt;br/&gt; env: &lt;br/&gt; perhop_times: &lt;br/&gt; packet_times: &lt;br/&gt; packets_received: &lt;br/&gt; packet_sizes: &lt;br/&gt; last_arrival: &lt;br/&gt; rec_waits: &lt;br/&gt; first_arrival: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(         self,         env,         rec_arrivals: bool = True,         absolute_arrivals: bool = True,         rec_waits: bool = True,         rec_flow_ids: bool = True,         debug: bool = False,     ): &lt;br/&gt; put(self, packet): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="240" width="419" height="591" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;port.interlink.Interlink&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; bandwidth: &lt;br/&gt; module1: &lt;br/&gt; module2: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, module1, module2, bandwidth): &lt;br/&gt; __repr__(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="669" y="-790" width="399" height="201" as="geometry" />
+        </mxCell>
+        <mxCell id="node18" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;port.port.Port&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; limit_bytes: &lt;br/&gt; src_coords: &lt;br/&gt; downstream_store: &lt;br/&gt; debug: &lt;br/&gt; byte_size: &lt;br/&gt; parent_switch: &lt;br/&gt; packets_dropped: &lt;br/&gt; element_id: &lt;br/&gt; store: &lt;br/&gt; dropped_by_flow: &lt;br/&gt; env: &lt;br/&gt; out: &lt;br/&gt; obp_rate: &lt;br/&gt; rate: &lt;br/&gt; zero_downstream_buffer: &lt;br/&gt; packets_received: &lt;br/&gt; busy: &lt;br/&gt; action: &lt;br/&gt; busy_packet_size: &lt;br/&gt; qlimit: &lt;br/&gt; dst_coords: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(         self,         env,         rate: float,         obp_rate: float,         qlimit: int = None,         limit_bytes: bool = False,         zero_downstream_buffer: bool = False,         element_id: int = None,         src_coords: tuple = (0, 0),         dst_coords: tuple = (0, 0),         debug: bool = False,         parent_switch=None     ): &lt;br/&gt; update(self, packet): &lt;br/&gt; run(self): &lt;br/&gt; put(self, packet): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="-760" width="418" height="801" as="geometry" />
+        </mxCell>
+        <mxCell id="node23" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;port.wire.Wire&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; src_coords: &lt;br/&gt; packets_rec: &lt;br/&gt; debug: &lt;br/&gt; loss_dist: &lt;br/&gt; action: &lt;br/&gt; store: &lt;br/&gt; env: &lt;br/&gt; delay_dist: &lt;br/&gt; wire_id: &lt;br/&gt; dst_coords: &lt;br/&gt; out: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self,                  env,                  delay_dist,                  loss_dist=None,                  src_coords=(0, 0),                  dst_coords=(0, 0),                  wire_id=0,                  debug=False): &lt;br/&gt; run(self): &lt;br/&gt; put(self, packet): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="-259" width="391" height="471" as="geometry" />
+        </mxCell>
+        <mxCell id="node20" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;scheduler.sp.SPServer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; priorities_list: &lt;br/&gt; debug: &lt;br/&gt; stores: &lt;br/&gt; packets_available: &lt;br/&gt; zero_buffer: &lt;br/&gt; element_id: &lt;br/&gt; prio_queue_count: &lt;br/&gt; upstream_updates: &lt;br/&gt; env: &lt;br/&gt; downstream_stores: &lt;br/&gt; flow_classes: &lt;br/&gt; byte_sizes: &lt;br/&gt; out: &lt;br/&gt; rate: &lt;br/&gt; zero_downstream_buffer: &lt;br/&gt; current_packet: &lt;br/&gt; packets_received: &lt;br/&gt; upstream_stores: &lt;br/&gt; action: &lt;br/&gt; prio: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self,                  env,                  rate,                  priorities,                  flow_classes: Callable = lambda p: p.flow_id,                  zero_buffer=False,                  zero_downstream_buffer=False,                  debug=False): &lt;br/&gt; update_stats(self, packet): &lt;br/&gt; update(self, packet): &lt;br/&gt; packet_in_service(self): &lt;br/&gt; byte_size(self, queue_id): &lt;br/&gt; size(self, queue_id): &lt;br/&gt; all_flows(self): &lt;br/&gt; total_packets(self): &lt;br/&gt; run(self): &lt;br/&gt; put(self, packet, upstream_update=None, upstream_store=None): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="417" y="1110" width="572" height="951" as="geometry" />
+        </mxCell>
+        <mxCell id="node8" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;scheduler.wfq.WFQServer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; downstream_store: &lt;br/&gt; debug: &lt;br/&gt; flow_queue_count: &lt;br/&gt; packets_dropped: &lt;br/&gt; zero_buffer: &lt;br/&gt; upstream_updates: &lt;br/&gt; store: &lt;br/&gt; env: &lt;br/&gt; weights: &lt;br/&gt; flow_classes: &lt;br/&gt; finish_times: &lt;br/&gt; byte_sizes: &lt;br/&gt; out: &lt;br/&gt; active_set: &lt;br/&gt; rate: &lt;br/&gt; zero_downstream_buffer: &lt;br/&gt; vtime: &lt;br/&gt; packets_received: &lt;br/&gt; current_packet: &lt;br/&gt; last_update: &lt;br/&gt; upstream_stores: &lt;br/&gt; action: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(         self,         env,         rate: float,         weights,         flow_classes: Callable = lambda p: p.flow_id,         zero_buffer=False,         zero_downstream_buffer=False,         debug: bool = False,     ): &lt;br/&gt; update_stats(self, packet): &lt;br/&gt; update(self, packet): &lt;br/&gt; packet_in_service(self): &lt;br/&gt; byte_size(self, queue_id): &lt;br/&gt; size(self, queue_id): &lt;br/&gt; all_flows(self): &lt;br/&gt; run(self): &lt;br/&gt; put(self, packet, upstream_update=None, upstream_store=None): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1058" y="1150" width="572" height="981" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;simulator.simulator.Simulator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; failed_nodes_count: &lt;br/&gt; result_dir: &lt;br/&gt; obp_ports: &lt;br/&gt; failed_nodes_list: &lt;br/&gt; demand_matrix: &lt;br/&gt; interlink_queues: &lt;br/&gt; switches: &lt;br/&gt; scenario_config: &lt;br/&gt; env: &lt;br/&gt; max_failed_nodes: &lt;br/&gt; port_queues: &lt;br/&gt; failure_log: &lt;br/&gt; interlink_object: &lt;br/&gt; updated_demand_matrix: &lt;br/&gt; current_algo: &lt;br/&gt; failure_probability: &lt;br/&gt; regen_obp: &lt;br/&gt; current_run: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, regen_obp, scenario_config,result_dir, current_run, current_algo, demand_matrix, updated_demand_matrix): &lt;br/&gt; trigger_failures(self): &lt;br/&gt; schedule_failure(self, switch, failure_time): &lt;br/&gt; reroute_after_failure(self, failed_switch): &lt;br/&gt; update_demand_matrix_with_backup(self, failed_switch): &lt;br/&gt; rerun_optimization_with_updated_demand(self, demand_matrix): &lt;br/&gt; update_simulation(self): &lt;br/&gt; get_arrival_distribution(self, lambda_arrival_rate): &lt;br/&gt; get_packet_size_distribution(self): &lt;br/&gt; run_simulation_with_rb(self, updated_demand_matrix, demand_matrix, simulation_time,current_run): &lt;br/&gt; assign_unique_flow_ids(self, updated_demand_matrix): &lt;br/&gt; plot_failures(self, simulation_time): &lt;br/&gt; configure_simulation_with_updated_demand(self, updated_demand_matrix): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1810" y="1100" width="1002" height="811" as="geometry" />
+        </mxCell>
+        <mxCell id="node0" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;topo.toroidal_topo.ToroidalTopo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; obp_topology: &lt;br/&gt; width: &lt;br/&gt; scenario_config: &lt;br/&gt; interlinks: &lt;br/&gt; modules: &lt;br/&gt; graph: &lt;br/&gt; height: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, scenario_config, width, height): &lt;br/&gt; create_toroidal_topology(self): &lt;br/&gt; custom_layout(self, G): &lt;br/&gt; get_all_obp_modules(self): &lt;br/&gt; create_obp_graph(self): &lt;br/&gt; visualize_obp(self): &lt;br/&gt; create_toroidal_grid(self): &lt;br/&gt; _get_neighbors(self, i, j, dim): &lt;br/&gt; _add_toroidal_edges(self, G, dim, toroidal_edges): &lt;br/&gt; get_interlinks(self): &lt;br/&gt; print_node_counts(self): &lt;br/&gt; get_node_connections(self): &lt;br/&gt; get_total_uplinks(self): &lt;br/&gt; get_total_downlinks(self): &lt;br/&gt; extract_uplink_and_downlink_nodes(self): &lt;br/&gt; generate_demand_matrix(self, num_commodities): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="540" y="250" width="449" height="741" as="geometry" />
+        </mxCell>
+        <mxCell id="node9" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;utils.taggedstore.TaggedStore&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; _capacity: &lt;br/&gt; event_count: &lt;br/&gt; items: &lt;br/&gt; put: &lt;br/&gt; get: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, env, capacity=float(&amp;#39;inf&amp;#39;)): &lt;br/&gt; capacity(self): &lt;br/&gt; _do_put(self, event): &lt;br/&gt; _do_get(self, event): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="-302" y="-250" width="353" height="321" as="geometry" />
+        </mxCell>
+        <mxCell id="node7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;utils.taggedstore.TaggedStoreGet&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="1" y="-428" width="387" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=0.377;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.001;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" source="node9" target="node13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge0" value="" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=0.205;exitY=1.001;exitDx=0;exitDy=0;entryX=0.500;entryY=0.001;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" source="node7" target="node10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=0;startArrow=block;startSize=12;endArrow=none;strokeColor=#595959;exitX=0.203;exitY=1.000;exitDx=0;exitDy=0;entryX=0.500;entryY=0.001;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" source="node11" target="node14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-9" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0;entryY=0.431;entryDx=0;entryDy=0;entryPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" target="node3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2100" y="540" as="sourcePoint" />
+            <mxPoint x="2230" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2160" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-15" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="node5" target="node21">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="1600" y="212" as="sourcePoint" />
+            <mxPoint x="1760" y="212" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-16" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=1.002;exitY=0.534;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="node18" target="node15">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="2030" y="-440" as="sourcePoint" />
+            <mxPoint x="2170" y="-276.18" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-22" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="node0" target="node12">
+          <mxGeometry x="-1" y="-82" relative="1" as="geometry">
+            <mxPoint x="1320" y="250" as="sourcePoint" />
+            <mxPoint x="1520" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="650" y="134" />
+              <mxPoint x="744" y="134" />
+            </Array>
+            <mxPoint x="-80" y="-62" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-23" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="1320" y="-90" as="sourcePoint" />
+            <mxPoint x="1480" y="-90" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="765" y="130" />
+              <mxPoint x="950" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;modem.obp_module.OBPModule&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; neighbors: &lt;br/&gt; x: &lt;br/&gt; y: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, x, y): &lt;br/&gt; add_neighbor(self, neighbor): &lt;br/&gt; __repr__(self): &lt;br/&gt; name(self): &lt;br/&gt; get_all_instances(cls): &lt;br/&gt; __eq__(self, other): &lt;br/&gt; __hash__(self): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="558" y="-334" width="371" height="351" as="geometry" />
+        </mxCell>
+        <mxCell id="node11" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;utils.taggedstore.TaggedStorePut&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; item: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, resource, item): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="230" y="-749.5" width="387" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-29" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="388" y="580" as="sourcePoint" />
+            <mxPoint x="548" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-30" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.001;entryY=0.555;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.459;exitY=-0.002;exitDx=0;exitDy=0;exitPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="1322.5479999999998" y="1149.878" as="sourcePoint" />
+            <mxPoint x="-299.64699999999993" y="-90.0049999999998" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1323" y="1077.84" />
+              <mxPoint x="-310" y="1077.84" />
+              <mxPoint x="-310" y="-90.16" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-33" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.582;entryY=1.004;entryDx=0;entryDy=0;entryPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" target="node19">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="2120" y="1100" as="sourcePoint" />
+            <mxPoint x="2230" y="1060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-35" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" target="node17">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="2250" y="152" as="sourcePoint" />
+            <mxPoint x="20" y="1170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="153" />
+              <mxPoint x="1020" y="1020" />
+              <mxPoint x="30" y="1020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-36" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_6oiMlaAPyzEEHy7tF0J-35">
+          <mxGeometry x="1" y="-8" relative="1" as="geometry">
+            <mxPoint x="3" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-37" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="2170" y="-332" as="sourcePoint" />
+            <mxPoint x="130" y="1190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="130" y="-332" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-41" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="2380" y="1100" as="sourcePoint" />
+            <mxPoint x="1930" y="920" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-43" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="1800" y="1530" as="sourcePoint" />
+            <mxPoint x="1630" y="1530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_6oiMlaAPyzEEHy7tF0J-44" value="1" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=bottom;rounded=0;entryX=0.472;entryY=1.003;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="node20">
+          <mxGeometry x="-1" y="3" relative="1" as="geometry">
+            <mxPoint x="1820" y="1840" as="sourcePoint" />
+            <mxPoint x="690" y="2210" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1770" y="1841" />
+              <mxPoint x="1770" y="2210" />
+              <mxPoint x="687" y="2210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;optimizer.muti_commodity_optimizer.MultiCommodityOptimizer&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; scenario_config: &lt;br/&gt; interlinks: &lt;br/&gt; graph: &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; __init__(self, scenario_config, graph, interlinks): &lt;br/&gt; find_paths_limited_hops(self, source, destination, max_hops, mode=&amp;#39;cold&amp;#39;): &lt;br/&gt; solve_mcfp_path_formulation(self, demand_matrix, objective_type, mode=&amp;#39;cold&amp;#39;): &lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="-293" y="430" width="681" height="231" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,65 @@
+# Test configuration for path ratio preservation with 2 commodities
+# Based on 80_lambda_our_model_2c.yaml
+scenario_name: test_path_ratio_2c
+
+random_seed:
+  seed_value: 42
+
+system:
+  width: 4
+  height: 4
+  downlink_number: 15
+  uplink_number: 15
+  interlink_capacity: 10000000
+  demand_matrix_generation: "fixed"
+  time_unit: "ms"
+
+optimization:
+  num_commodities: 2
+  optimization_model: multicommodity
+  max_hops: 7
+  objective_func: 'minimize_max_flow'
+  split_commodities: "on"
+
+fixed_demand:
+  arrival_rate: [1000, 2000]  # Two commodities with different arrival rates
+  priority: [1, 1]  # Same priority
+  source: ['OBPModule(0, 0)_uplink_0', 'OBPModule(0, 1)_uplink_0']
+  destination: ['OBPModule(3, 0)_downlink_0', 'OBPModule(3, 1)_downlink_0']
+
+simulation:
+  num_runs: 1
+  simulation_time: 1000
+  generation_finish_time: 500
+  # Multi-step simulation configuration
+  num_steps: 2
+  step_duration: 1000
+  reoptimize_per_step: False
+  preserve_path_ratios: True
+  # Optional: Define new demands for each step (null means use fixed_demand)
+  step_demands:
+    - null  # Step 1 uses fixed_demand arrival_rate [1000, 2000]
+    - [1500, 3000]  # Step 2 uses new demands [1500, 3000]
+  buffer_size: 15000
+  obp_capacity: 1000
+  fetchingAlgorithm: "fifo"
+  brancher_type: "random"
+  limit_bytes: True
+  interarrival_time_generation: "exponential"
+  packet_distribution_generation: "fixed"
+  avg_packet_size: 1500.00
+  max_failed_nodes: 0
+  probability_failure: 0
+  failures: []
+  path_mode: "warm"
+  failure_strategy: "fail-routing"
+  backup_is_considered: 'off'
+  re_routing_is_considered: 'off'
+  backup: []
+
+obp_port:
+  infinite_capacity: False
+
+interlink:
+  infinite_capacity: False
+
