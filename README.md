@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements load balancing for the ICARUS-MDA-POLY MTL project. It includes various components for network simulation, optimization, and data visualization.
+This project implements load balancing for the ICARUS project. It includes various components for network simulation, optimization, and data visualization.
 
 ## Project Structure
 
